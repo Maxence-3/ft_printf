@@ -6,12 +6,11 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 14:57:42 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/17 18:01:21 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/18 13:21:37 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	function_call(char *s, int i, va_list args)
 {
@@ -23,22 +22,19 @@ int	function_call(char *s, int i, va_list args)
 	if (s[i] == 's')
 		c += ft_putstr(va_arg(args, char *));
 	if (s[i] == 'p')
-		c += ft_print_ptr(va_arg(args, void *), c);
+		c += ft_print_ptr(va_arg(args, void *));
 	if (s[i] == 'd')
-		c += ft_putnbr(va_arg(args, int), 1, c);
+		c += ft_putnbr(va_arg(args, int));
 	if (s[i] == 'i')
-		c += ft_putnbr(va_arg(args, int), 1, c);
+		c += ft_putnbr(va_arg(args, int));
 	if (s[i] == 'u')
-		c += ft_putnbr(va_arg(args, int), 0, c);
+		c += ft_putnbr_unsigned(va_arg(args, int));
 	if (s[i] == 'x')
-		c += ft_print_hex(va_arg(args, int), "0123456789abcdef", c);
+		c += ft_print_hex(va_arg(args, int), "0123456789abcdef");
 	if (s[i] == 'X')
-		c += ft_print_hex(va_arg(args, int), "0123456789ABCDEF", c);
+		c += ft_print_hex(va_arg(args, int), "0123456789ABCDEF");
 	if (s[i] == '%')
-	{
-		write(1, "%", 1);
-		c += 1;
-	}
+		c += ft_putchar('%');
 	return (c);
 }
 
@@ -80,14 +76,14 @@ int	ft_printf(const char *s, ...)
 	ft_printf("%c", '\n');
 	ft_printf("%u", -1312);
 	ft_printf("%c", '\n');
-	ft_printf("%x", 13121312);
+	ft_printf("%x", -13121312);
 	ft_printf("%c", '\n');
-	ft_printf("%X", 13121312);
+	ft_printf("%X", -13121312);
 	ft_printf("%c", '\n');
 	ft_printf("%%");
 	ft_printf("%c", '\n');
 	ft_printf("Coucou %s %c%c", "tout le monde", '!', '\n');
 	ft_printf("%c", '\n');
-	// ft_printf("%s\n", NULL);
-	return (0);
+	ft_printf("%p", 0);
+	ft_printf("%c", '\n');
 } */

@@ -6,14 +6,14 @@
 #    By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/17 15:57:00 by mde-carv          #+#    #+#              #
-#    Updated: 2025/11/17 17:28:16 by mde-carv         ###   ########.fr        #
+#    Updated: 2025/11/18 12:25:07 by mde-carv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 CC = cc
 FLAGS = -Wall -Wextra -Werror
-SRC = ft_printf.c ft_printf_utils.c
+SRC = ft_printf.c ft_printf_putchar.c ft_printf_putnbr.c ft_printf_hex.c
 HEADER = -I./includes
 OBJ = $(SRC:.c=.o)
 RM = rm -rf
