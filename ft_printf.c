@@ -44,6 +44,8 @@ int	ft_printf(const char *s, ...)
 	int		i;
 	int		c;
 
+	if (!s)
+		return (-1);
 	va_start(args, s);
 	i = 0;
 	c = 0;
@@ -62,7 +64,9 @@ int	ft_printf(const char *s, ...)
 	return (c);
 }
 
-/* int	main(void)
+/* #include <stdio.h>
+
+int	main(void)
 {
 	ft_printf("%c", 'c');
 	ft_printf("%c", '\n');
@@ -86,4 +90,5 @@ int	ft_printf(const char *s, ...)
 	ft_printf("%c", '\n');
 	ft_printf("%p", 0);
 	ft_printf("%c", '\n');
+	ft_printf("%i", ft_printf(NULL));
 } */
